@@ -1,0 +1,73 @@
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Ajouter un livre</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header bg-info">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">Editer un livre</h4>
+      </div>
+      <div class="modal-body">
+        
+        <form #bookForme = "ngForm" (ngSubmit) = "saveBook()" class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="title">Titre:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" required placeholder="Entrer le titre" name="title" [(ngModel)]="book.title">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="author">Auteur:</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" required placeholder="Entrer l'auteur du livre" name="author" [(ngModel)]="book.author">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="synopsis">Synopsis:</label>
+                <div class="col-sm-10">
+                    <textarea [(ngModel)]="book.synopsis" name="synopsis" class="form-control" required rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="photo">Photo:</label>
+                <div class="col-sm-10">
+                    <input [(ngModel)]="book.photo" name="photo" type="text" class="form-control" placeholder="Entrer le lien vers la photo">
+                    <!-- <img src="book.photo" alt=""> -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input [disabled] = "!bookForme.form.valid" class="btn btn-success" type="submit" value="Enregistrer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Quitter</button>
+              </div>
+        </form>
+
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Hello, World!</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
