@@ -123,6 +123,21 @@
       "id": 17,
       "username": "pascob.pk@gmail.com",
       "password": "2131213"
+    },
+    {
+      "id": 18,
+      "username": "admin@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": 19,
+      "username": "admin@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": 20,
+      "username": "admin@gmail.com",
+      "password": "123456789"
     }
   ]
 }

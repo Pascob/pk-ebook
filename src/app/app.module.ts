@@ -22,7 +22,8 @@ import { AuthService } from './services/auth.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationConfig } from '@ng-bootstrap/ng-bootstrap';
 
-import { SearchBookPipe } from './pipe/search-book.pipe'
+import { SearchBookPipe } from './pipe/search-book.pipe';
+import { BookDirectiveDirective } from './book-list/book-directive.directive';
 
 
 
@@ -37,7 +38,8 @@ import { SearchBookPipe } from './pipe/search-book.pipe'
     SingleBookComponent,
     BookFormComponent,
     HeaderComponent,
-    SearchBookPipe
+    SearchBookPipe,
+    BookDirectiveDirective
   ],
   imports: [
     BrowserModule,
